@@ -7,20 +7,20 @@
   <meta name="description" content="Ayush Shrestha is a full stack and DevOps engineer in Kathmandu. He designs, runs and fixes production systems: APIs, databases and Kubernetes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="top">
     <div class="wrap">
-      <a class="mark" href="#top">Ayush Shrestha</a>
+      <a class="mark" href="#top"><span>~/</span>ayush</a>
       <nav aria-label="Sections">
-        <a href="#work">Experience</a>
-        <a href="#systems">Systems I own</a>
-        <a href="#projects">My own projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#work">experience</a>
+        <a href="#systems">systems</a>
+        <a href="#projects">projects</a>
+        <a href="#skills">skills</a>
+        <a href="#contact">contact</a>
       </nav>
     </div>
   </header>
@@ -28,9 +28,10 @@
   <main id="top">
     <div class="wrap hero">
       <div>
-        <h1>Ayush Shrestha</h1>
+        <p class="status-line"><i></i>Kathmandu, Nepal</p>
+        <h1>Ayush <em>Shrestha</em></h1>
         <p class="lead">Full stack and DevOps engineer. I design, run and fix production systems: APIs, databases and Kubernetes.</p>
-        <p class="where">Kathmandu, Nepal. Four years of experience.</p>
+        <p class="prompt" aria-label="Summary"><b>$</b> <span class="v">whoami</span><br>full stack + devops, 4 years<br><b>$</b> <span class="v">kubectl get nodes</span><br>boom, anode&nbsp; Ready<br><b>$</b> <span class="cursor"></span></p>
         <ul class="contact-links">
           <li><a href="mailto:ayushrestha8585@gmail.com">Email me</a></li>
           <li><a href="https://github.com/Ayush85">GitHub</a></li>
@@ -39,6 +40,7 @@
       </div>
 
       <figure class="topology">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
         <svg viewBox="0 0 520 380" role="img" aria-labelledby="topo-title topo-desc">
           <title id="topo-title">The FreeSchema platform</title>
           <desc id="topo-desc">An nginx gateway in front of a two-node k3s cluster. Each node runs .NET services, Node.js services and a MySQL database. The two databases replicate to each other with semi-sync replication. Prometheus, Grafana, Loki and Alertmanager watch both nodes.</desc>
@@ -82,8 +84,18 @@
       </figure>
     </div>
 
+    <div class="wrap">
+      <dl class="stats">
+        <div><dt>Experience</dt><dd><span>4</span> years</dd></div>
+        <div><dt>Services run</dt><dd><span>~10</span></dd></div>
+        <div><dt>Database</dt><dd><span>27</span> GB</dd></div>
+        <div><dt>Video service tests</dt><dd><span>39</span></dd></div>
+      </dl>
+    </div>
+
     <section id="work">
-      <div class="wrap">
+      <div class="wrap timeline">
+        <p class="label">// experience</p>
         <h2>Experience</h2>
         <p class="section-note">Four years across SaaS, internal tools and production infrastructure.</p>
 
@@ -122,7 +134,8 @@
     </section>
 
     <section id="systems">
-      <div class="wrap">
+      <div class="wrap systems">
+        <p class="label">// systems</p>
         <h2>Systems I own at Mentor Friends</h2>
         <p class="section-note">I am the technical lead and owner of these three. They are company projects, so the source is private.</p>
 
@@ -157,6 +170,7 @@
 
     <section id="projects">
       <div class="wrap">
+        <p class="label">// projects</p>
         <h2>Projects on my own time</h2>
         <p class="section-note">Products I built and run myself. Most are live.</p>
 
@@ -202,6 +216,7 @@
 
     <section id="skills">
       <div class="wrap">
+        <p class="label">// skills</p>
         <h2>Skills</h2>
         <dl class="skills">
           <div><dt>DevOps</dt><dd>Kubernetes (k3s), Docker, Proxmox, LXD, nginx, HAProxy, CI/CD with GitHub Actions and GitLab, Prometheus, Grafana, Loki, k6</dd></div>
