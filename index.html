@@ -7,85 +7,55 @@
   <meta name="description" content="Ayush Shrestha is a full stack and DevOps engineer in Kathmandu. He designs, runs and fixes production systems: APIs, databases and Kubernetes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;650&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a class="skip" href="#overview">Skip to content</a>
-  <div class="shell">
-    <aside class="side" id="side">
-      <div class="side-bar">
-        <a class="brand" href="#overview"><b>AS</b><span>Ayush Shrestha<small>Full stack and DevOps</small></span></a>
-        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sidenav">Menu</button>
-      </div>
-      <nav class="side-nav" id="sidenav" aria-label="Documentation">
-        <div class="nav-group">
-          <p class="nav-title">Start</p>
-          <a href="#overview">Overview</a>
-        </div>
-        <div class="nav-group">
-          <p class="nav-title">Systems</p>
-          <a href="#systems">Systems I own</a>
-          <a class="sub" href="#freeschema">FreeSchema on Kubernetes</a>
-          <a class="sub" href="#graphsync">GraphSync</a>
-          <a class="sub" href="#video">Video and HLS service</a>
-          <a href="#incident">Incident: 504 stampede</a>
-        </div>
-        <div class="nav-group">
-          <p class="nav-title">Background</p>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Own projects</a>
-          <a href="#stack">Stack</a>
-        </div>
-        <div class="nav-group">
-          <p class="nav-title">Reach me</p>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="side-foot">
-          <a href="https://github.com/Ayush85">GitHub</a>
-          <a href="https://linkedin.com/in/ayushshrestha85">LinkedIn</a>
-        </div>
+  <a class="skip" href="#systems">Skip to content</a>
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href="#top"><b>AS</b>Ayush Shrestha</a>
+      <nav aria-label="Sections">
+        <a href="#systems">Systems</a>
+        <a href="#products">Products</a>
+        <a href="#journey">Journey</a>
+        <a href="#skills">Skills</a>
+        <a class="cta" href="#contact">Contact</a>
       </nav>
-    </aside>
+    </div>
+  </header>
 
-    <main class="main">
-      <div class="doc">
+  <main id="top">
+    <div class="wrap hero">
+      <p class="mono"><i></i>Kathmandu, Nepal</p>
+      <h1>I build software, and I <em class="serif">keep it running.</em></h1>
+      <p class="lead">Full stack and DevOps engineer with four years of APIs, databases and Kubernetes. Technical lead and owner of a platform of about ten services in production.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#systems">See my work</a>
+        <a class="btn" href="mailto:ayushrestha8585@gmail.com">Email me</a>
+      </div>
+      <ul class="tech" aria-label="Main tools">
+        <li>Kubernetes</li><li>.NET Core</li><li>Node.js</li><li>TypeScript</li><li>MySQL</li><li>PostgreSQL</li><li>Go</li><li>React</li>
+      </ul>
+    </div>
 
-        <section id="overview" style="margin-top:0">
-          <p class="crumbs">Docs / Overview</p>
-          <h1>Ayush Shrestha</h1>
-          <p class="sub">Full stack and DevOps engineer. I design, run and fix production systems: APIs, databases and Kubernetes. Four years of experience, based in Kathmandu.</p>
-          <div class="badges">
-            <span class="badge ok">Technical lead and owner, Mentor Friends</span>
-            <span class="badge">Kathmandu, Nepal</span>
-            <span class="badge">Passed NEC license exam, Oct 2026</span>
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="#systems">Read the systems</a>
-            <a class="btn" href="#contact">Contact</a>
-          </div>
-
-          <div class="code">
-            <div class="code-head"><span>summary.yaml</span><span>facts, not config</span></div>
-            <pre><span class="k">role</span>:        technical lead and owner, FreeSchema platform
-<span class="k">experience</span>:  <span class="v">4 years</span>
-<span class="k">production</span>:
-  <span class="k">services</span>:   <span class="v">~10</span>   <span class="c"># .NET Core, Node.js, React</span>
-  <span class="k">cluster</span>:    <span class="v">k3s, 2 bare-metal nodes</span>
-  <span class="k">database</span>:   <span class="v">MySQL 8.4, 27 GB, semi-sync replication, ProxySQL</span>
-  <span class="k">monitoring</span>: <span class="v">Prometheus, Grafana, Loki, Alertmanager -> Slack</span>
-<span class="k">building</span>:    GraphSync <span class="c"># C#/.NET graph engine, in progress</span></pre>
-          </div>
-        </section>
-
-        <section id="systems">
-          <h2>Systems I own</h2>
-          <p>Three systems at Mentor Friends, where I am the technical lead and owner of each.</p>
-          <div class="callout"><p><b>Source is private.</b> These are company projects, so the code is not public. Everything below is what I built and what I measured.</p></div>
-
-          <h3 id="freeschema">FreeSchema on Kubernetes <span class="badge ok">In production</span></h3>
-          <p>About ten services (.NET Core, Node.js, React) run on a bare-metal two-node k3s cluster, with no managed cloud underneath.</p>
-          <figure class="diagram">
+    <section id="systems">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Production <em class="serif">systems</em></h2>
+          <p>Built at Mentor Friends, where I am the technical lead and owner of all three. Company projects, so the source is private.</p>
+        </div>
+        <div class="work">
+          <article class="proj">
+            <div class="copy">
+              <span class="mono">01 &middot; Platform</span>
+              <h3>FreeSchema on Kubernetes<span class="tag">In production</span></h3>
+              <p>About ten services on a bare-metal two-node k3s cluster, with no managed cloud underneath. Autoscaling, replicated databases and full monitoring, run by one owner.</p>
+              <ul class="facts"><li>Failover tested on a real outage</li><li>MySQL 8.0 to 8.4, 27 GB</li><li>Slack alerts</li><li>npm CLI</li></ul>
+              <p class="mono stack">.NET Core, Node.js, React, k3s, MySQL, ProxySQL, Prometheus</p>
+              <p style="margin-top:14px;max-width:46ch;font-size:0.95rem"><strong style="color:var(--ink);font-weight:500">One fix:</strong> a 504 cache stampede in a stateful .NET service, solved with cookie-based session affinity and no change to existing routes.</p>
+            </div>
+            <figure class="panel">
 <svg viewBox="0 0 520 380" role="img" aria-labelledby="topo-title topo-desc">
                 <title id="topo-title">The FreeSchema platform</title>
                 <desc id="topo-desc">An nginx gateway in front of a two-node k3s cluster. Each node runs .NET services, Node.js services and a MySQL database. The two databases replicate to each other with semi-sync replication. Prometheus, Grafana, Loki and Alertmanager watch both nodes.</desc>
@@ -125,159 +95,196 @@
                 <rect class="t-box" x="60" y="322" width="400" height="44" rx="6"/>
                 <text class="t-text" x="260" y="349" text-anchor="middle">Prometheus, Grafana, Loki, Alertmanager</text>
               </svg>
-            <figcaption>One gateway, two nodes, replicated databases, one monitoring stack.</figcaption>
-          </figure>
-          <dl class="spec">
-            <div><dt>Problem</dt><dd>About ten services had to run reliably on two physical servers.</dd></div>
-            <div><dt>Approach</dt><dd>k3s with autoscaling (HPA) and PodDisruptionBudgets on the API services. nginx as the gateway. MySQL with semi-sync replication and ProxySQL for read/write splitting.</dd></div>
-            <div><dt>Operations</dt><dd>Failover tested against a real outage. MySQL upgraded from 8.0 to 8.4 on a 27 GB database. Prometheus, Grafana, Loki and Alertmanager with Slack alerts. A published npm CLI sets up, seeds, backs up and restores a deployment.</dd></div>
-            <div><dt>Delivery</dt><dd>An in-house CI/CD system, a CI secret-scanning workflow, and k6 load tests.</dd></div>
-          </dl>
+            </figure>
+          </article>
 
-          <h3 id="graphsync">GraphSync <span class="badge wip">In progress</span></h3>
-          <p>A graph traversal engine for FreeSchema, written in C#/.NET.</p>
-          <div class="stats">
-            <div class="stat"><b>16.1M</b><span>rows, concepts table</span></div>
-            <div class="stat"><b>20.6M</b><span>rows, connections table</span></div>
-            <div class="stat"><b>4-way</b><span>self-joins today</span></div>
-            <div class="stat"><b>7 to 8 s</b><span>per query today</span></div>
-          </div>
-          <dl class="spec">
-            <div><dt>Problem</dt><dd>Analytics queries are four-way self-joins over those two tables. Each takes seven to eight seconds and appears hundreds of times in the slow log.</dd></div>
-            <div><dt>Approach</dt><dd>A memory-mapped compressed sparse row (CSR) graph, kept in step with MySQL over MQTT and replicated independently on each node.</dd></div>
-            <div><dt>Decision</dt><dd>Edges cross user boundaries, so sharding per user was ruled out.</dd></div>
-            <div><dt>Status</dt><dd>In progress. I have not yet measured the result, so I quote no speedup.</dd></div>
-          </dl>
+          <article class="proj flip">
+            <div class="copy">
+              <span class="mono">02 &middot; Engine</span>
+              <h3>GraphSync<span class="tag wip">In progress</span></h3>
+              <p>A graph traversal engine to replace slow analytics joins. A memory-mapped compressed sparse row graph stays in step with MySQL over MQTT and is replicated independently on each node.</p>
+              <ul class="facts"><li>16.1M concepts</li><li>20.6M connections</li><li>No per-user sharding, edges cross users</li></ul>
+              <p class="mono stack">C#/.NET, MQTT, MySQL</p>
+              <p style="margin-top:14px;max-width:46ch;font-size:0.95rem">I have not measured the result yet, so I quote no speedup.</p>
+            </div>
+            <div class="panel">
+              <div class="versus">
+                <div><span class="mono">Today</span><b>4-way self-join</b><span>7 to 8 seconds per query, hundreds of times in the slow log</span></div>
+                <div class="to"><span class="mono">Building</span><b>mmap CSR graph</b><span>traversal in memory, synced over MQTT. Result still to be measured</span></div>
+              </div>
+            </div>
+          </article>
 
-          <h3 id="video">Video transcoding and HLS service <span class="badge info">39 tests passing</span></h3>
-          <p>A separate service so video work never blocks the main app. It turns uploaded MP4 files into adaptive HLS streams from 144p to 1080p.</p>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Layer</th><th>Choice</th></tr></thead>
-              <tbody>
-                <tr><td>API</td><td>Node.js, TypeScript, Fastify. OpenAPI docs generated from Zod schemas</td></tr>
-                <tr><td>Processing</td><td>FFmpeg, with a BullMQ queue</td></tr>
-                <tr><td>State</td><td>Redis only, with TTL expiry. No database</td></tr>
-                <tr><td>Storage</td><td>Cloudflare R2</td></tr>
-                <tr><td>Security</td><td>Two-layer auth (API key plus bearer token), rate limiting on every endpoint</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p>A structured code review found 17 issues: 1 critical (a concurrency crash), 1 high, 4 medium and 10 low. I fixed all of them. I also fixed Safari playback by converting 10-bit HEVC to 8-bit H.264.</p>
-        </section>
-
-        <section id="incident">
-          <h2>Incident: 504 cache stampede</h2>
-          <p>A short write-up of a production fix.</p>
-          <dl class="spec">
-            <div><dt>Symptom</dt><dd>A stateful .NET service returned 504 errors.</dd></div>
-            <div><dt>Cause</dt><dd>A cache stampede in a stateful service that relies on an in-memory cache.</dd></div>
-            <div><dt>Fix</dt><dd>Cookie-based session affinity, routed through an internal ingress-nginx hop.</dd></div>
-            <div><dt>Constraint</dt><dd>Done without changing any existing routes.</dd></div>
-          </dl>
-        </section>
-
-        <section id="experience">
-          <h2>Experience</h2>
-          <p>Changelog, newest first.</p>
-          <ul class="log">
-            <li class="now"><time>Dec 2024 to present</time><div><h4>Full Stack Developer <span>Mentor Friends Pvt. Ltd.</span></h4><p>Technical lead and owner of the three systems above. Also built FreeSchemaAccessControl, an in-house CI/CD system and a secret-scanning workflow.</p></div></li>
-            <li class="now"><time>Aug 2026 to present</time><div><h4>Part-time Developer <span>Fatafatsewa</span></h4><p>Laravel backend and admin panel, a Next.js frontend and a MySQL 8.0 database. Migrating the production server from Hostinger to a new Ubuntu VPS.</p></div></li>
-            <li><time>Jun 2023 to Sep 2024</time><div><h4>Full Stack Developer <span>Urban Nepal Consulting Pvt. Ltd.</span></h4><p>Django modules for the Optix SaaS platform (users, projects, equipment, timesheets, locations) on PostgreSQL, with file storage on DigitalOcean Spaces.</p></div></li>
-            <li><time>Nov 2022 to Jun 2023</time><div><h4>Intern, then Junior Full Stack Developer <span>Logicseed</span></h4><p>Maintained an HR system in Django, improved a Core PHP and Supabase application, and wrote Python scrapers with Pandas and Selenium.</p></div></li>
-          </ul>
-        </section>
-
-        <section id="projects">
-          <h2>Own projects</h2>
-          <p>Products I built and run myself.</p>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Project</th><th>What it does</th><th>Stack</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td class="nowrap"><a href="https://eggfarm.aydexis.com">Egg Farm</a></td><td>Poultry farm operations with double-entry accounting, role-based access (5 roles, 17 permissions), Bikram Sambat calendar. About 140 backend tests.</td><td>TypeScript</td><td><span class="badge ok">Live, real user</span></td></tr>
-                <tr><td class="nowrap"><a href="https://inventory.nagariktech.com">Inventory</a></td><td>Stock, invoicing, ledgers and profit and loss for Nepali small businesses. Mobile app with barcode scan and QR sign-in.</td><td>Web, mobile</td><td><span class="badge ok">Live</span></td></tr>
-                <tr><td class="nowrap"><a href="https://menuor.com">Menuor</a></td><td>Restaurant menus for many tenants, each on its own domain, set up by a scheduled nginx and certificate job. <a href="https://github.com/Ayush85/MoodMenu">Source</a></td><td>Next.js, Prisma, Docker</td><td><span class="badge ok">Live</span></td></tr>
-                <tr><td class="nowrap"><a href="https://aydex.cloud">aydexCloud</a></td><td>Privacy-first web analytics with a Go event tracker and a Next.js dashboard. <a href="https://github.com/Ayush85/aydexCloud">Source</a></td><td>Go, Next.js, Prisma</td><td><span class="badge ok">Live</span></td></tr>
-                <tr><td class="nowrap"><a href="https://github.com/Ayush85/infoharness">Infoharness</a></td><td>Scores a help center on contradictions, duplicates, stale pages and broken links. Free to use.</td><td>Version 0.1</td><td><span class="badge info">v0.1</span></td></tr>
-                <tr><td class="nowrap"><a href="https://futsal.aumnex.com">Futsal booking</a></td><td>Court booking for customers, owners and admins. Approving a slot rejects competing requests.</td><td>React, Express, PostgreSQL</td><td><span class="badge ok">Live</span></td></tr>
-                <tr><td class="nowrap"><a href="https://github.com/Ayush85/FinTrack">FinTrack</a></td><td>Android app that reads bank SMS on the phone and sorts it into debit and credit summaries.</td><td>React Native</td><td><span class="badge">Source</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="stack">
-          <h2>Stack</h2>
-          <div class="table-wrap">
-            <table class="stack-table">
-              <tbody>
-                <tr><td>DevOps</td><td>Kubernetes (k3s), Docker, Proxmox, LXD, nginx, HAProxy, GitHub Actions, GitLab CI, Prometheus, Grafana, Loki, k6</td></tr>
-                <tr><td>Backend and APIs</td><td>.NET Core, Node.js, Django, Core PHP, REST design, OpenAPI, JWT, MQTT</td></tr>
-                <tr><td>Databases</td><td>MySQL (replication, ProxySQL, tuning), PostgreSQL, Redis, Supabase</td></tr>
-                <tr><td>Languages</td><td>Python, TypeScript, JavaScript, C#, Go, PHP</td></tr>
-                <tr><td>Frontend</td><td>React, Next.js, HTML and CSS</td></tr>
-                <tr><td>Education</td><td>Bachelor's in Computer Engineering, Institute of Engineering, Tribhuwan University</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="contact">
-          <h2>Contact</h2>
-          <p>Email is the best way to reach me.</p>
-          <div class="contact-card">
-            <a href="mailto:ayushrestha8585@gmail.com">ayushrestha8585@gmail.com <span>Email</span></a>
-            <a href="https://github.com/Ayush85">github.com/Ayush85 <span>GitHub</span></a>
-            <a href="https://linkedin.com/in/ayushshrestha85">linkedin.com/in/ayushshrestha85 <span>LinkedIn</span></a>
-          </div>
-          <p class="page-foot">Ayush Shrestha, Kathmandu, Nepal.</p>
-        </section>
+          <article class="proj">
+            <div class="copy">
+              <span class="mono">03 &middot; Service</span>
+              <h3>Video transcoding and HLS</h3>
+              <p>A separate service so video work never blocks the main app. It turns uploaded MP4 files into adaptive HLS streams from 144p to 1080p.</p>
+              <ul class="facts"><li>39 passing tests</li><li>17 review issues fixed</li><li>1 critical crash caught</li><li>Safari fix: HEVC 10-bit to H.264</li></ul>
+              <p class="mono stack">Node.js, TypeScript, Fastify, FFmpeg, BullMQ, Redis, Cloudflare R2</p>
+            </div>
+            <div class="panel">
+              <div class="flow">
+                <div class="step"><b>Upload MP4</b><span>REST API, two-layer auth, rate limited</span></div>
+                <div class="arrow" aria-hidden="true">&darr;</div>
+                <div class="step"><b>BullMQ queue</b><span>Redis only, state expires with a TTL</span></div>
+                <div class="arrow" aria-hidden="true">&darr;</div>
+                <div class="step"><b>FFmpeg</b><span>renditions from 144p to 1080p</span></div>
+                <div class="arrow" aria-hidden="true">&darr;</div>
+                <div class="step"><b>HLS on Cloudflare R2</b><span>adaptive streams, OpenAPI docs from Zod</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <nav class="toc" aria-label="On this page">
-        <p class="nav-title">On this page</p>
-        <a href="#overview">Overview</a>
-        <a href="#systems">Systems I own</a>
-        <a href="#incident">Incident</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Own projects</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </main>
-  </div>
+    <section id="products">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Products I <em class="serif">built</em></h2>
+          <p>On my own time. Most are live, and some have real users.</p>
+        </div>
+        <div class="work">
+        <article class="proj ">
+          <div class="copy">
+            <span class="mono">01 &middot; Product</span>
+            <h3>Egg Farm</h3>
+            <p>Runs a poultry farm end to end, with a double-entry accounting engine under it. A real farm uses it every day.</p>
+            <ul class="facts"><li>5 roles, 17 permissions</li><li>JWT with refresh rotation</li><li>Bilingual UI</li><li>About 140 backend tests</li></ul>
+            <p class="mono stack">TypeScript</p>
+            <div class="links"><a href="https://eggfarm.aydexis.com">Visit site</a></div>
+          </div>
+          <div class="frame" aria-label="Egg Farm preview">
+            <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">eggfarm.aydexis.com</span></div>
+            <div class="screen">
+              <div class="cover c-egg"><span>Poultry operations</span><b>Egg Farm</b><ul><li>Accounting</li><li>Roles</li><li>Bikram Sambat</li></ul></div>
+              <img src="images/projects/eggfarm.png" alt="Screenshot of Egg Farm" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()">
+            </div>
+          </div>
+        </article>
+        <article class="proj flip ">
+          <div class="copy">
+            <span class="mono">02 &middot; Product</span>
+            <h3>Inventory</h3>
+            <p>Stock, sales and purchase invoicing, customer and supplier ledgers, and profit and loss for Nepali small businesses. A mobile app scans barcodes and signs in by QR code.</p>
+            <ul class="facts"><li>CSV and barcode import</li><li>Multi-business</li><li>Role-based staff access</li></ul>
+            <p class="mono stack">Web and mobile</p>
+            <div class="links"><a href="https://inventory.nagariktech.com">Visit site</a></div>
+          </div>
+          <div class="frame" aria-label="Inventory preview">
+            <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">inventory.nagariktech.com</span></div>
+            <div class="screen">
+              <div class="cover c-inv"><span>Business management</span><b>Inventory</b><ul><li>Invoicing</li><li>Ledgers</li><li>Barcode app</li></ul></div>
+              <img src="images/projects/inventory.png" alt="Screenshot of Inventory" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()">
+            </div>
+          </div>
+        </article>
+        <article class="proj ">
+          <div class="copy">
+            <span class="mono">03 &middot; Product</span>
+            <h3>Menuor</h3>
+            <p>Digital menus for many restaurants, each on its own domain. A scheduled job creates the nginx host and the certificate, so onboarding a restaurant needs no manual server work.</p>
+            <ul class="facts"><li>Per-restaurant domains</li><li>Cron-driven certbot</li></ul>
+            <p class="mono stack">Next.js, Prisma, Docker</p>
+            <div class="links"><a href="https://menuor.com">Visit site</a><a href="https://github.com/Ayush85/MoodMenu">Source</a></div>
+          </div>
+          <div class="frame" aria-label="Menuor preview">
+            <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">menuor.com</span></div>
+            <div class="screen">
+              <div class="cover c-menu"><span>Restaurant menus</span><b>Menuor</b><ul><li>Multi-tenant</li><li>Custom domains</li><li>Auto SSL</li></ul></div>
+              <img src="images/projects/menuor.png" alt="Screenshot of Menuor" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()">
+            </div>
+          </div>
+        </article>
+        <article class="proj flip ">
+          <div class="copy">
+            <span class="mono">04 &middot; Product</span>
+            <h3>aydexCloud</h3>
+            <p>Privacy-first web analytics with a Go event tracker and a Next.js dashboard. Self-hosted with Docker Compose behind nginx on a DigitalOcean droplet.</p>
+            <ul class="facts"><li>Self-hosted</li><li>Error tracking</li></ul>
+            <p class="mono stack">Go, Next.js, Prisma, Caddy</p>
+            <div class="links"><a href="https://aydex.cloud">Visit site</a><a href="https://github.com/Ayush85/aydexCloud">Source</a></div>
+          </div>
+          <div class="frame" aria-label="aydexCloud preview">
+            <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">aydex.cloud</span></div>
+            <div class="screen">
+              <div class="cover c-cloud"><span>Web analytics</span><b>aydexCloud</b><ul><li>Privacy-first</li><li>Go tracker</li><li>Sentry</li></ul></div>
+              <img src="images/projects/aydexcloud.png" alt="Screenshot of aydexCloud" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()">
+            </div>
+          </div>
+        </article>
+        <article class="proj ">
+          <div class="copy">
+            <span class="mono">05 &middot; Product</span>
+            <h3>Futsal booking</h3>
+            <p>Court booking with three roles. Approving a slot locks it and automatically rejects the other requests for the same time.</p>
+            <ul class="facts"><li>Role-based flows</li><li>Conflict handling</li></ul>
+            <p class="mono stack">React, Express, Prisma, PostgreSQL</p>
+            <div class="links"><a href="https://futsal.aumnex.com">Visit site</a></div>
+          </div>
+          <div class="frame" aria-label="Futsal booking preview">
+            <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">futsal.aumnex.com</span></div>
+            <div class="screen">
+              <div class="cover c-fut"><span>Court booking</span><b>Futsal booking</b><ul><li>Customers</li><li>Owners</li><li>Admins</li></ul></div>
+              <img src="images/projects/futsal.png" alt="Screenshot of Futsal booking" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()">
+            </div>
+          </div>
+        </article>
+        </div>
+        <div class="mini">
+          <article>
+            <h3>Infoharness</h3>
+            <p class="mono">Version 0.1</p>
+            <p>Scans a help center for contradictions, duplicates, stale pages and broken links, and scores how healthy the knowledge base is. Free to use.</p>
+            <div class="links"><a href="https://github.com/Ayush85/infoharness">Source</a></div>
+          </article>
+          <article>
+            <h3>FinTrack</h3>
+            <p class="mono">React Native</p>
+            <p>An Android app that reads bank SMS messages on the phone and sorts them into debit and credit summaries.</p>
+            <div class="links"><a href="https://github.com/Ayush85/FinTrack">Source</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <script>
-    (function () {
-      var side = document.getElementById("side"), btn = document.querySelector(".menu-btn");
-      btn.addEventListener("click", function () {
-        var open = side.classList.toggle("open");
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-      document.getElementById("sidenav").addEventListener("click", function (e) {
-        if (e.target.closest("a")) { side.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
-      });
+    <section id="journey">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>The <em class="serif">journey</em></h2>
+          <p>Four years, from intern to owning production.</p>
+        </div>
+        <div class="journey">
+          <article class="now"><p class="when">Dec 2024 to now</p><h3>Full Stack Developer<span>Mentor Friends Pvt. Ltd.</span></h3><p>Technical lead and owner of FreeSchema, GraphSync and the video service. Also built an access-control service, CI/CD and secret scanning.</p></article>
+          <article class="now"><p class="when">Aug 2026 to now</p><h3>Part-time Developer<span>Fatafatsewa</span></h3><p>Laravel backend and admin, Next.js frontend, MySQL 8.0. Migrating the production server from Hostinger to a new Ubuntu VPS.</p></article>
+          <article><p class="when">Jun 2023 to Sep 2024</p><h3>Full Stack Developer<span>Urban Nepal Consulting</span></h3><p>Django modules for the Optix SaaS platform on PostgreSQL, with file storage on DigitalOcean Spaces.</p></article>
+          <article><p class="when">Nov 2022 to Jun 2023</p><h3>Intern, then Junior Developer<span>Logicseed</span></h3><p>Maintained an HR system in Django, improved a Core PHP and Supabase app, and wrote Python scrapers.</p></article>
+        </div>
+      </div>
+    </section>
 
-      var ids = ["overview", "freeschema", "graphsync", "video", "incident", "experience", "projects", "stack", "contact"];
-      var secs = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
-      var links = document.querySelectorAll(".side-nav a[href^='#'], .toc a[href^='#']");
-      function mark(id) {
-        var group = id === "freeschema" || id === "graphsync" || id === "video" ? "systems" : id;
-        links.forEach(function (a) {
-          var h = a.getAttribute("href").slice(1);
-          a.classList.toggle("active", h === id || (h === "systems" && group === "systems" && !a.classList.contains("sub") && false));
-        });
-        document.querySelectorAll(".toc a").forEach(function (a) { if (a.getAttribute("href") === "#" + group) a.classList.add("active"); });
-      }
-      function onScroll() {
-        var y = window.scrollY + 140, cur = secs[0].id;
-        secs.forEach(function (s) { if (s.getBoundingClientRect().top + window.scrollY <= y) cur = s.id; });
-        mark(cur);
-      }
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-    })();
-  </script>
+    <section id="skills">
+      <div class="wrap">
+        <div class="sec-head"><h2>What I <em class="serif">use</em></h2></div>
+        <div class="skills">
+          <div><h3>DevOps</h3><ul class="chips"><li>Kubernetes (k3s)</li><li>Docker</li><li>Proxmox</li><li>LXD</li><li>nginx</li><li>HAProxy</li><li>GitHub Actions</li><li>GitLab CI</li><li>Prometheus</li><li>Grafana</li><li>Loki</li><li>k6</li></ul></div>
+          <div><h3>Backend and APIs</h3><ul class="chips"><li>.NET Core</li><li>Node.js</li><li>Django</li><li>Core PHP</li><li>REST design</li><li>OpenAPI</li><li>JWT</li><li>MQTT</li></ul></div>
+          <div><h3>Databases</h3><ul class="chips"><li>MySQL replication</li><li>ProxySQL</li><li>Query tuning</li><li>PostgreSQL</li><li>Redis</li><li>Supabase</li></ul></div>
+          <div><h3>Languages and frontend</h3><ul class="chips"><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>C#</li><li>Go</li><li>PHP</li><li>React</li><li>Next.js</li></ul></div>
+        </div>
+        <p class="edu">Bachelor's in Computer Engineering, Institute of Engineering, Tribhuwan University. Passed the Nepal Engineering Council license exam in October 2026.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section id="contact" class="contact" style="padding:0;padding:clamp(32px,7vw,88px)">
+        <h2>Let's build <em class="serif">something.</em></h2>
+        <a class="mail" href="mailto:ayushrestha8585@gmail.com">ayushrestha8585@gmail.com</a>
+        <p class="elsewhere"><span>Kathmandu, Nepal</span><a href="https://github.com/Ayush85">GitHub</a><a href="https://linkedin.com/in/ayushshrestha85">LinkedIn</a></p>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap">Ayush Shrestha</div></footer>
 </body>
 </html>
