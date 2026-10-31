@@ -278,3 +278,16 @@ footer { margin-top: var(--sec); padding-block: 28px max(36px, env(safe-area-ins
 .pc .hd .st { order: -1; }
 .field { position: absolute; inset: 0 0 auto 0; height: min(100vh, 900px); min-height: 640px; }
 .cover svg { left: 8%; width: 92%; }
+
+/* text spacing: looser tracking, wider word gaps */
+body { word-spacing: .06em; letter-spacing: .003em; line-height: 1.72; }
+h1 { letter-spacing: -.03em; word-spacing: .08em; line-height: 1.02; }
+h2 { letter-spacing: -.02em; word-spacing: .1em; line-height: 1.12; }
+.card h3, .job h3, .pc .lbl { letter-spacing: -.005em; word-spacing: .1em; }
+.stat b, .num b { letter-spacing: -.015em; word-spacing: .08em; }
+.role { letter-spacing: 0; word-spacing: .1em; }
+.sum, .lede, .pts, .note, .job p, .pc .bd p, .sk dd { word-spacing: .08em; letter-spacing: .005em; }
+.pts li, .sk dd { line-height: 1.65; }
+.mail { letter-spacing: 0; word-spacing: .06em; }
+.t-text, .t-small { letter-spacing: .01em; word-spacing: .05em; }
+.tag, .st, .eyebrow, .dia-head { word-spacing: .04em; }
