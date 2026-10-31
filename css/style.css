@@ -457,3 +457,16 @@ h2 { letter-spacing: -.02em; word-spacing: .1em; line-height: 1.12; }
 .pc .stretch::after { content: none; }
 .pc .stretch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .pc .hint .i { position: static; width: 1em; height: 1em; }
+
+/* featured products */
+.pc .st::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--ok); animation: ping 2.6s infinite; vertical-align: .08em; }
+@media (min-width: 720px) {
+  .prods { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .cover { height: 210px; }
+  .cover .lbl { font-size: 1.7rem; max-width: 50%; left: 26px; bottom: 20px; }
+  .pc .bd { padding: 24px 28px 28px; gap: 14px; }
+  .pc .bd p { font-size: 1rem; }
+  .pc .lk { font-size: 1rem; }
+}
+@media (min-width: 960px) { .pc .bd { padding: 24px 28px 28px; } .pc .bd p { font-size: 1rem; } }
+@media (prefers-reduced-motion: reduce) { .pc .st::before { animation: none; } }
