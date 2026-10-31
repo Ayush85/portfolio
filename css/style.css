@@ -291,3 +291,11 @@ h2 { letter-spacing: -.02em; word-spacing: .1em; line-height: 1.12; }
 .mail { letter-spacing: 0; word-spacing: .06em; }
 .t-text, .t-small { letter-spacing: .01em; word-spacing: .05em; }
 .tag, .st, .eyebrow, .dia-head { word-spacing: .04em; }
+
+/* background stays fixed while the page scrolls; stronger network */
+.field { position: fixed; inset: 0; height: auto; min-height: 0; }
+.grid { -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 30%, transparent 85%); mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 30%, transparent 85%); }
+.nn-bg { -webkit-mask-image: none; mask-image: none; }
+.nn-bg .e line { stroke-opacity: .24; stroke-width: 1.1; }
+.nn-bg .n circle { stroke-opacity: .85; stroke-width: 1.8; r: 7; }
+.nn-bg .sig { opacity: .95; }
