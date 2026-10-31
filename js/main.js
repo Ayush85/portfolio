@@ -37,3 +37,17 @@
     });
   }
 })();
+
+// journey path progress
+(function () {
+  var tl = document.getElementById("path");
+  if (!tl) return;
+  function upd() {
+    var r = tl.getBoundingClientRect(), vh = window.innerHeight;
+    var p = (vh * 0.6 - r.top) / r.height;
+    tl.style.setProperty("--prog", Math.max(0, Math.min(1, p)).toFixed(3));
+  }
+  window.addEventListener("scroll", upd, { passive: true });
+  window.addEventListener("resize", upd);
+  upd();
+})();

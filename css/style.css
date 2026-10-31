@@ -299,3 +299,33 @@ h2 { letter-spacing: -.02em; word-spacing: .1em; line-height: 1.12; }
 .nn-bg .e line { stroke-opacity: .24; stroke-width: 1.1; }
 .nn-bg .n circle { stroke-opacity: .85; stroke-width: 1.8; r: 7; }
 .nn-bg .sig { opacity: .95; }
+
+/* journey pathway */
+.tl { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 40px; }
+.tl .rail { position: absolute; left: 7px; top: 14px; bottom: 14px; width: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.tl .rail .fill { position: absolute; inset: 0 0 auto 0; height: calc(var(--prog, 0) * 100%); background: var(--accent); transition: height .2s linear; }
+.step { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 0 0 28px 38px; }
+.step:last-child { padding-bottom: 0; }
+.step .pin { position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--base); border: 2px solid var(--accent); box-shadow: 0 0 0 5px var(--base); }
+.step.now .pin { background: var(--accent); }
+.step.now .pin::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--accent); opacity: .4; animation: ping2 2.4s ease-out infinite; }
+@keyframes ping2 { to { transform: scale(1.7); opacity: 0; } }
+.step .when { font: 500 .8rem var(--mono); color: var(--accent); padding-top: 2px; }
+.step .job { padding: 20px 24px; }
+.step .job h3 { margin-top: 0; }
+.step.now .job { border-color: var(--accent); }
+@media (min-width: 720px) {
+  .tl { margin-left: 0; }
+  .tl .rail { left: 214px; }
+  .step { grid-template-columns: 190px minmax(0, 1fr); gap: 0 44px; padding: 0 0 32px 0; }
+  .step .when { text-align: right; padding-top: 1px; }
+  .step .pin { left: 207px; top: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .step.now .pin::after { animation: none; } }
+
+/* background: quiet backdrop, content leads */
+.nn-bg .e line { stroke-opacity: .075; stroke-width: 1; }
+.nn-bg .n circle { stroke-opacity: .28; stroke-width: 1.3; }
+.nn-bg .sig { opacity: .35; }
+.grid { opacity: .6; }
+@media (prefers-color-scheme: dark) { .nn-bg .e line { stroke-opacity: .1; } .nn-bg .n circle { stroke-opacity: .32; } }
