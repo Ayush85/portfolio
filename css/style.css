@@ -361,3 +361,82 @@ h2 { letter-spacing: -.02em; word-spacing: .1em; line-height: 1.12; }
 :root[data-theme="dark"] .tt .sun { display: block; } :root[data-theme="dark"] .tt .moon { display: none; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tt .sun { display: block; } :root:not([data-theme="light"]) .tt .moon { display: none; } }
 .nav .tools { display: flex; align-items: center; gap: 4px; }
+
+/* ===== motion layer ===== */
+.prog { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 90; pointer-events: none; }
+.prog i { display: block; height: 100%; width: 100%; background: var(--accent); transform-origin: 0 50%; transform: scaleX(var(--sp, 0)); }
+
+/* staggered reveal + settle */
+.js .rv { transition-delay: var(--d, 0s); }
+.js .rv.done { transition: transform .25s ease-out, box-shadow .3s, border-color .3s, background .3s; transition-delay: 0s; }
+
+/* hero entrance */
+@keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.js .hero > div:first-child > * { animation: up .8s cubic-bezier(.2,.7,.2,1) both; }
+.js .hero > div:first-child > :nth-child(1) { animation-delay: .05s; }
+.js .hero > div:first-child > :nth-child(2) { animation-delay: .15s; }
+.js .hero > div:first-child > :nth-child(3) { animation-delay: .28s; }
+.js .hero > div:first-child > :nth-child(4) { animation-delay: .4s; }
+.js .hero > div:first-child > :nth-child(5) { animation-delay: .52s; }
+.js .hero .dia { animation: up .9s .3s cubic-bezier(.2,.7,.2,1) both; }
+
+/* list items slide in with their card */
+.js .card .pts li { opacity: 0; transform: translateX(-10px); }
+.js .card.in .pts li { opacity: 1; transform: none; transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--i, 0) * 70ms + .25s); }
+
+/* video pipeline: a pulse travels through the stages */
+@keyframes stage { 0%, 22%, 100% { border-color: var(--line); background: var(--glass-2); } 8%, 14% { border-color: var(--accent); background: var(--soft); } }
+.pipe .s { animation: stage 6s ease-in-out infinite; }
+.pipe .s:nth-of-type(2) { animation-delay: 1.5s; } .pipe .s:nth-of-type(3) { animation-delay: 3s; } .pipe .s:nth-of-type(4) { animation-delay: 4.5s; }
+.pipe .s:nth-of-type(1) { animation-delay: 0s; }
+
+/* buttons and links */
+.btn .i, .lk .i, .mail .i { transition: transform .2s ease; }
+.btn.p:hover .i { transform: translateX(4px); }
+.lk a:hover .i { transform: translate(2px, -2px); }
+.btn:active { transform: translateY(0) scale(.98); }
+.nav ul a { position: relative; }
+
+/* journey: stops pop when reached */
+.step .pin { transition: transform .4s cubic-bezier(.3,1.6,.5,1), background .3s; transform: scale(.6); }
+.step.in .pin { transform: scale(1); }
+
+/* product cards: tilt, lift, animated covers */
+.pc { transform-style: preserve-3d; will-change: transform; }
+.js .pc.rv.done { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px)); }
+.js .pc.rv.done:hover { --ty: -6px; border-color: var(--accent); box-shadow: 0 24px 44px -22px rgba(20,40,100,.4); }
+.pc .cover { overflow: hidden; }
+.pc .cover svg { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.pc:hover .cover svg { transform: scale(1.06) translateX(-2%); }
+.pc .lbl { transition: transform .35s ease; }
+.pc:hover .lbl { transform: translateY(-4px); }
+@keyframes grow { from { transform: scaleY(0); } }
+@keyframes draw { from { stroke-dashoffset: 420; } }
+@keyframes slidein { from { transform: translateX(46px); opacity: 0; } }
+@keyframes ring { from { stroke-dasharray: 0 214; } }
+@keyframes rise { from { transform: scaleY(0); } }
+.cover svg rect, .cover svg path, .cover svg circle { transform-box: fill-box; }
+.cover.play .c-bars rect, .c-egg.play rect { transform-origin: 50% 100%; animation: grow .8s cubic-bezier(.2,.7,.2,1) both; }
+.c-egg.play rect:nth-child(2) { animation-delay: .08s; } .c-egg.play rect:nth-child(3) { animation-delay: .16s; } .c-egg.play rect:nth-child(4) { animation-delay: .24s; } .c-egg.play rect:nth-child(5) { animation-delay: .32s; }
+.c-egg.play path { stroke-dasharray: 420; animation: draw 1.2s .3s ease-out both; }
+.c-menu.play rect { animation: slidein .7s cubic-bezier(.2,.7,.2,1) both; }
+.c-menu.play rect:nth-child(2) { animation-delay: .12s; } .c-menu.play rect:nth-child(3) { animation-delay: .24s; }
+.c-menu.play circle { animation: slidein .7s .1s both; }
+.c-cloud.play path:first-child { transform-origin: 50% 100%; animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.c-cloud.play path:last-child { stroke-dasharray: 420; animation: draw 1.2s .2s ease-out both; }
+.c-info.play circle:nth-child(2) { animation: ring 1.3s cubic-bezier(.2,.7,.2,1) both; }
+.c-info.play rect { transform-origin: 0 50%; animation: grow2 .8s .3s ease-out both; }
+@keyframes grow2 { from { transform: scaleX(0); } }
+
+/* network parallax */
+.nn-bg { transform: translate(var(--px, 0px), var(--py, 0px)); transition: transform .6s ease-out; }
+@keyframes npulse { 50% { stroke-opacity: .6; } }
+.nn-bg .n circle { animation: npulse 5s ease-in-out infinite; }
+.nn-bg .n circle:nth-child(3n) { animation-delay: -1.5s; } .nn-bg .n circle:nth-child(3n+1) { animation-delay: -3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .hero > div:first-child > *, .js .hero .dia, .pipe .s, .nn-bg .n circle, [class*="c-"].play * { animation: none !important; }
+  .js .card .pts li { opacity: 1; transform: none; }
+  .js .pc.rv.done { transform: none; } .pc .cover svg, .pc .lbl { transition: none; }
+  .step .pin { transform: none; }
+}
