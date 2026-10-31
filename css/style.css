@@ -151,7 +151,7 @@ h2 { margin-top: 8px; font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; let
 .prods { display: grid; gap: 14px; margin-top: 28px; }
 .pc { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .cover { position: relative; height: 168px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, color-mix(in srgb, var(--c1) 30%, transparent), color-mix(in srgb, var(--c2) 12%, transparent)); }
-.cover svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cover > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .cover .lbl { position: absolute; left: 22px; bottom: 16px; font-size: 1.45rem; font-weight: 800; letter-spacing: -.035em; color: var(--ink); }
 .c-egg { --c1: #f5b43c; --c2: #f0783c; } .c-menu { --c1: #3cc88c; --c2: #28a0c8; } .c-cloud { --c1: #9a6eff; --c2: #6e96ff; } .c-info { --c1: #3cbee6; --c2: #5a78ff; }
 .pc .bd { display: flex; flex-direction: column; gap: 10px; padding: 18px 24px 24px; flex: 1; }
@@ -406,8 +406,8 @@ h2 { letter-spacing: -.02em; word-spacing: .1em; line-height: 1.12; }
 .js .pc.rv.done { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px)); }
 .js .pc.rv.done:hover { --ty: -6px; border-color: var(--accent); box-shadow: 0 24px 44px -22px rgba(20,40,100,.4); }
 .pc .cover { overflow: hidden; }
-.pc .cover svg { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
-.pc:hover .cover svg { transform: scale(1.06) translateX(-2%); }
+.pc .cover > svg { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.pc:hover .cover > svg { transform: scale(1.06) translateX(-2%); }
 .pc .lbl { transition: transform .35s ease; }
 .pc:hover .lbl { transform: translateY(-4px); }
 @keyframes grow { from { transform: scaleY(0); } }
@@ -415,7 +415,7 @@ h2 { letter-spacing: -.02em; word-spacing: .1em; line-height: 1.12; }
 @keyframes slidein { from { transform: translateX(46px); opacity: 0; } }
 @keyframes ring { from { stroke-dasharray: 0 214; } }
 @keyframes rise { from { transform: scaleY(0); } }
-.cover svg rect, .cover svg path, .cover svg circle { transform-box: fill-box; }
+.cover > svg rect, .cover > svg path, .cover > svg circle { transform-box: fill-box; }
 .cover.play .c-bars rect, .c-egg.play rect { transform-origin: 50% 100%; animation: grow .8s cubic-bezier(.2,.7,.2,1) both; }
 .c-egg.play rect:nth-child(2) { animation-delay: .08s; } .c-egg.play rect:nth-child(3) { animation-delay: .16s; } .c-egg.play rect:nth-child(4) { animation-delay: .24s; } .c-egg.play rect:nth-child(5) { animation-delay: .32s; }
 .c-egg.play path { stroke-dasharray: 420; animation: draw 1.2s .3s ease-out both; }
@@ -440,3 +440,20 @@ h2 { letter-spacing: -.02em; word-spacing: .1em; line-height: 1.12; }
   .js .pc.rv.done { transform: none; } .pc .cover svg, .pc .lbl { transition: none; }
   .step .pin { transform: none; }
 }
+
+/* clickable product cards */
+.pc { cursor: pointer; }
+.pc .stretch { position: absolute; inset: 0; z-index: 1; }
+.pc .stretch::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 520px; } /* extends the hit area over the whole card */
+.pc { position: relative; }
+.pc .stretch { position: static; }
+.pc .stretch::after { position: absolute; inset: 0; height: auto; z-index: 1; }
+.pc .lk a { position: relative; z-index: 2; }
+.pc .hint { position: absolute; right: 14px; top: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px; font: 500 .74rem var(--mono); color: var(--ink); background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); opacity: 0; transform: translateY(-4px); transition: opacity .25s, transform .25s; pointer-events: none; }
+.pc:hover .hint, .pc:focus-within .hint { opacity: 1; transform: none; }
+.pc .stretch:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: inherit; }
+@media (hover: none) { .pc .hint { opacity: 1; transform: none; } }
+.pc .stretch { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.pc .stretch::after { content: none; }
+.pc .stretch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pc .hint .i { position: static; width: 1em; height: 1em; }
