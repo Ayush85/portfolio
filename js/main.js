@@ -51,3 +51,17 @@
   window.addEventListener("resize", upd);
   upd();
 })();
+
+// theme toggle
+(function () {
+  var b = document.querySelector(".tt");
+  if (!b) return;
+  var root = document.documentElement;
+  b.addEventListener("click", function () {
+    var t = root.getAttribute("data-theme");
+    if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    var n = t === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", n);
+    try { localStorage.setItem("theme", n); } catch (e) {}
+  });
+})();
